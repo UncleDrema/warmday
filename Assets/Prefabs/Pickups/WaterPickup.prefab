@@ -60,17 +60,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterPickup
       objectReference: {fileID: 0}
+    - target: {fileID: 6082121743587235860, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.79655933
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082121743587235860, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0065626055
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101803075771695450, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6b4750a71220b834f94a95e492c386d2, type: 3}
     - target: {fileID: 8101803075771695450, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
       propertyPath: m_Color.b
-      value: 0.8679245
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8101803075771695450, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
       propertyPath: m_Color.g
-      value: 0.5131594
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8101803075771695450, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
       propertyPath: m_Color.r
-      value: 0.39711642
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
