@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Game.Ui;
+using TriInspector;
 using UnityEngine;
 
 namespace Game
@@ -19,6 +20,7 @@ namespace Game
             UpdateResourcesUi();
         }
 
+        [Button]
         public void AddResource(ResourceType resourceType, int amount)
         {
             _resources[resourceType] += amount;
