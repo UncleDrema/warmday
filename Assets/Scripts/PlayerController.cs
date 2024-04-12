@@ -1,10 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game
 {
     public class PlayerController : MonoBehaviour
     {
+        public Rigidbody2D rb;
         public float speed = 1;
         public float rotSpeed = 1;
 

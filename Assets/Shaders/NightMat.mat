@@ -87,7 +87,7 @@ Material:
     - _CharacterGlow: {r: 2, g: 5, b: 0.9, a: 0.05}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Flashlight: {r: 270.52646, g: 1, b: 0.15, a: 1.5}
+    - _Flashlight: {r: 270.01245, g: 1, b: 0.15, a: 1.5}
     - _LightSource: {r: 0.5, g: 0.5, b: 0.1, a: 0.9}
     - _LightSourceAmbient: {r: 0.5, g: 0.5, b: 0.3, a: 0.15}
     - _LightSourcePlayer: {r: 0.5, g: 0.5, b: 0.35, a: 0.035}
