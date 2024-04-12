@@ -31,7 +31,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4981037618204289128}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -170,7 +169,6 @@ RectTransform:
   - {fileID: 6348545173862868586}
   - {fileID: 4981037618204289128}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -288,7 +286,6 @@ RectTransform:
   m_Children:
   - {fileID: 7985461765283903947}
   m_Father: {fileID: 4154556230429392702}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -400,6 +397,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6270805982740401756}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 820, y: -380, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -409,7 +407,6 @@ Transform:
   - {fileID: 8257313037642936735}
   - {fileID: 6750208767623436607}
   m_Father: {fileID: 4154556230429392702}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &275779128071581221
 PrefabInstance:
@@ -475,6 +472,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7684584170477666677, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 74
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -508,6 +509,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoodUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2181831727533923751, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c68107a6d0b2c9749884103aa9822a18, type: 3}
     - target: {fileID: 2279496789518773660, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
       propertyPath: m_Name
       value: FoodImage
@@ -560,6 +565,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7684584170477666677, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 110
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -593,6 +602,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2181831727533923751, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6b4750a71220b834f94a95e492c386d2, type: 3}
     - target: {fileID: 6808964056108529434, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
       propertyPath: m_RootOrder
       value: -2
@@ -636,6 +649,10 @@ PrefabInstance:
     - target: {fileID: 6808964056108529434, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684584170477666677, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 74
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
