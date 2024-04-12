@@ -16,6 +16,7 @@ namespace Game
         private void Awake()
         {
             offset = transform.position - player.position;
+            nightMaterial = new Material(nightMaterial);
         }
 
         private void OnRenderImage(RenderTexture source, RenderTexture destination)
