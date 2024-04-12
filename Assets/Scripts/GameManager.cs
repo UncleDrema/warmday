@@ -7,6 +7,8 @@ namespace Game
 {
     public class GameManager : MonoBehaviour
     {
+        public static GameManager Instance;
+        
         [SerializeField]
         private MainUiController ui;
         
@@ -14,6 +16,7 @@ namespace Game
 
         private void Awake()
         {
+            Instance = this;
             _resources[ResourceType.Water] = 0;
             _resources[ResourceType.Food] = 0;
             _resources[ResourceType.Ammo] = 0;

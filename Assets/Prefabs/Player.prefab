@@ -289,9 +289,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3480ba6bcc2463f92a5db367ed96603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 4066558797263271076}
   speed: 2
   rotSpeed: 90
+  collectRadius: 1
 --- !u!1 &7311479431079094460
 GameObject:
   m_ObjectHideFlags: 0
