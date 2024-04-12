@@ -420,6 +420,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AmmoUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2181831727533923751, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a083506373fbe9d4f9b5add237182769, type: 3}
+    - target: {fileID: 2181831727533923751, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2279496789518773660, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
       propertyPath: m_Name
       value: AmmoImage
@@ -474,7 +482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7684584170477666677, guid: 8184dab50a29ad64c8306e1d8ae007a7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 74
+      value: 36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

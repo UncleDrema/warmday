@@ -64,17 +64,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoodPickup
       objectReference: {fileID: 0}
+    - target: {fileID: 6082121743587235860, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3573825
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082121743587235860, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.011912733
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101803075771695450, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c68107a6d0b2c9749884103aa9822a18, type: 3}
     - target: {fileID: 8101803075771695450, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
       propertyPath: m_Color.b
-      value: 0.29881036
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8101803075771695450, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
       propertyPath: m_Color.g
-      value: 0.754717
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8101803075771695450, guid: 0b11f6d5aa64dcb4e86db0e379b4778e, type: 3}
       propertyPath: m_Color.r
-      value: 0.252759
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
