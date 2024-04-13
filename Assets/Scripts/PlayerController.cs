@@ -51,12 +51,12 @@ namespace Game
 
             if (Input.GetKey(KeyCode.W))
             {
-                direction += Vector3.left;
+                direction += Vector3.up;
             }
 
             if (Input.GetKey(KeyCode.S))
             {
-                direction -= Vector3.left;
+                direction -= Vector3.up;
             }
             
             direction.Normalize();

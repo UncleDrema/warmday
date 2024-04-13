@@ -19,9 +19,12 @@
             uniform float4 _Flashlight;
             
             float4 frag(v2f_img i) : COLOR {
-                float2 ratio = float2(1, 1 / _AspectRatio);
                 float2 uv = i.uv;
-                float2 playerPosition = _LightSourcePlayer.xy;
+                float2 playerPosition = float2(0.5, 0.5);
+                float2 flashlightPosition = _LightSourcePlayer.xy;
+                float2 ratio = float2(1, 1 / _AspectRatio);
+                float2 flashRelPos = (flashlightPosition - uv) / ratio;
+                float2 flashDir = normalize(flashRelPos);
                 float2 relPos = (playerPosition - uv) / ratio;
                 float2 dir = normalize(relPos);
                 float4 c = tex2D(_MainTex, uv);
@@ -33,9 +36,9 @@
                 float2 flashlightDir = float2(cos(angle), sin(angle));
 
                 // Фрагментный код для создания конуса света от фонарика
-                float angleFactor = dot(flashlightDir, dir);
+                float angleFactor = dot(flashlightDir, flashDir);
                 float coneFactor = smoothstep(cos(_Flashlight.y * 0.5), 1.0, angleFactor);
-                ray = length(relPos);
+                ray = length(flashRelPos);
                 delta += coneFactor * smoothstep(_Flashlight.z, 0, ray) * _Flashlight.w;
 
                 // Фрагментный код для создания фонового освещения

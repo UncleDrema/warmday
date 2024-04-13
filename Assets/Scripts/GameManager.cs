@@ -11,6 +11,9 @@ namespace Game
         
         [SerializeField]
         private MainUiController ui;
+
+        [SerializeField]
+        private PlayerController player;
         
         private readonly Dictionary<ResourceType, int> _resources = new Dictionary<ResourceType, int>();
 
@@ -36,6 +39,11 @@ namespace Game
             {
                 ui.SetResource(res, amount);
             }
+        }
+
+        public Vector3 GetPlayerPosition()
+        {
+            return player.transform.position;
         }
     }
 }
