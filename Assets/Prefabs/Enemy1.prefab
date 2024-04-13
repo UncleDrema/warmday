@@ -163,11 +163,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008d5ea2b627445f8777dd504a391854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadBodyPrefab: {fileID: 3607264412113924156, guid: fe25362f96cbc6d4cb2d47e7c541c15c, type: 3}
   area: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
   speed: 0.75
+  playerSeeBoost: 2
   rotateSpeed: 5
   timeBetweenPoints: 2
+  playerSeeDistanceSqr: 9
   timer: 0
 --- !u!61 &6115467243644234944
 BoxCollider2D:

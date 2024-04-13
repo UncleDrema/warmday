@@ -21,6 +21,9 @@ namespace Game
 
         [SerializeField]
         private DayNightTimer timer;
+
+        [SerializeField]
+        public SoundPlayer soundPlayer;
         
         private readonly Dictionary<ResourceType, int> _resources = new Dictionary<ResourceType, int>();
 
@@ -43,6 +46,11 @@ namespace Game
         {
             _resources[resourceType] += amount;
             UpdateResourcesUi();
+        }
+
+        public int GetResource(ResourceType resourceType)
+        {
+            return _resources[resourceType];
         }
 
         private void UpdateResourcesUi()
