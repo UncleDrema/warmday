@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Game.Ui;
 using TriInspector;
 using UnityEngine;
@@ -8,12 +9,21 @@ namespace Game
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
+
+        [SerializeField]
+        private NightCamera camera;
         
         [SerializeField]
         private MainUiController ui;
 
         [SerializeField]
         private PlayerController player;
+
+        [SerializeField]
+        private DayNightTimer timer;
+
+        [SerializeField]
+        public SoundPlayer soundPlayer;
         
         private readonly Dictionary<ResourceType, int> _resources = new Dictionary<ResourceType, int>();
 
@@ -26,11 +36,21 @@ namespace Game
             UpdateResourcesUi();
         }
 
+        private void Update()
+        {
+            camera.nightDepth = timer.NightDepth;
+        }
+
         [Button]
         public void AddResource(ResourceType resourceType, int amount)
         {
             _resources[resourceType] += amount;
             UpdateResourcesUi();
+        }
+
+        public int GetResource(ResourceType resourceType)
+        {
+            return _resources[resourceType];
         }
 
         private void UpdateResourcesUi()

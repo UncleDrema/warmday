@@ -9,6 +9,7 @@ namespace Game
 {
     public class Enemy : MonoBehaviour
     {
+        public GameObject deadBodyPrefab;
         public EnemyArea area;
         public Vector3 target;
         public float speed = 0.5f;
@@ -85,6 +86,13 @@ namespace Game
         private void NextTarget()
         {
             target = area.GetRandomPosition();
+        }
+
+        public void Kill()
+        {
+            GameManager.Instance.soundPlayer.PlaySound(SoundType.ZombiDeath);
+            Instantiate(deadBodyPrefab, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 }
