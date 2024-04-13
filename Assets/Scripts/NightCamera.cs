@@ -17,6 +17,7 @@ namespace Game
         private Vector3 offset;
         private float4 savedFlashlight;
         private float4 savedPlayer;
+        private float nightDepth = 1f;
 
         private void Awake()
         {
@@ -58,6 +59,11 @@ namespace Game
         private void LateUpdate()
         {
             transform.position = player.position + offset;
+        }
+
+        public void SetNightDepth(float depth)
+        {
+            nightDepth = depth;
         }
     }
 }
