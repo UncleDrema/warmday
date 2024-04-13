@@ -279,7 +279,7 @@ MonoBehaviour:
   fillImage: {fileID: 559213460359142651}
   dayDuration: 5
   nightDuration: 10
-  start: 0
+  start: 0.5
   fill: 0
 --- !u!1 &3295782995947497327
 GameObject:

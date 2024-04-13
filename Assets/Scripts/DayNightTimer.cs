@@ -40,6 +40,10 @@ namespace Game
         {
             get
             {
+                if (!IsNight())
+                {
+                    return 0;
+                }
                 var x = 2 * (fill - 0.5f);
                 return 1 - Mathf.Pow(2 * x - 1, 10);
             }

@@ -17,7 +17,12 @@ namespace Game
         private Vector3 offset;
         private float4 savedFlashlight;
         private float4 savedPlayer;
-        private float nightDepth = 1f;
+
+        [SerializeField]
+        private Vector4 DayNightParams;
+        
+        [Range(0, 1)]
+        public float nightDepth = 1f;
 
         private void Awake()
         {
@@ -35,16 +40,20 @@ namespace Game
 
         private void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
-            UpdatePosition();
+            UpdatePositionAndDayNight();
             UpdateRotation();
             Graphics.Blit(source, destination, nightMaterial);
         }
 
-        private void UpdatePosition()
+        private void UpdatePositionAndDayNight()
         {
             Vector2 screen = _camera.WorldToViewportPoint(flashlight.position);
             float4 playerLight = nightMaterial.GetVector(PlayerLightKey);
             playerLight.xy = screen;
+            playerLight.zw = new float2(
+                Mathf.Lerp(DayNightParams.x, DayNightParams.y, nightDepth),
+                Mathf.Lerp(DayNightParams.z, DayNightParams.w, nightDepth)
+                );
             nightMaterial.SetVector(PlayerLightKey, playerLight);
         }
 
@@ -59,11 +68,6 @@ namespace Game
         private void LateUpdate()
         {
             transform.position = player.position + offset;
-        }
-
-        public void SetNightDepth(float depth)
-        {
-            nightDepth = depth;
         }
     }
 }
