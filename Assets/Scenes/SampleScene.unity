@@ -727,8 +727,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca74652c99e4b459252313685863d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathControllerUi: {fileID: 4203491228252487520}
   daysLeft: {fileID: 481698016}
   leaveBunkerButton: {fileID: 1408103365}
+  dangerPanel: {fileID: 4203491228252487519}
   bunkerUiPanel: {fileID: 1282712254}
   nightCamera: {fileID: 519420033}
   ui: {fileID: 4203491228252487518}
@@ -781,9 +783,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9ffc3c2c4d140ec4092ba5b59ea12778, type: 3}
   playerDeathZombi:
   - {fileID: 8300000, guid: 8af9bd0c36a743c47999c6498057ce5a, type: 3}
-  playerDeathSun: []
-  playerDeathNoSupplies: []
-  playerDeathNotCollected: []
+  playerDeathSun:
+  - {fileID: 8300000, guid: 8af9bd0c36a743c47999c6498057ce5a, type: 3}
+  playerDeathNoSupplies:
+  - {fileID: 8300000, guid: 8af9bd0c36a743c47999c6498057ce5a, type: 3}
+  playerDeathNotCollected:
+  - {fileID: 8300000, guid: 8af9bd0c36a743c47999c6498057ce5a, type: 3}
   zombiDeath:
   - {fileID: 8300000, guid: 9ffec49093d6beb4b9446d7ecc0913b1, type: 3}
   - {fileID: 8300000, guid: 45e8fdebabedf754097518e3fd5db5ea, type: 3}
@@ -791,7 +796,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0c61bd03bb77dbc4694dd6a10ffe225a, type: 3}
   - {fileID: 8300000, guid: 0904c9c547961f045870a3b67d769c79, type: 3}
   - {fileID: 8300000, guid: 0bcb2f65f03a9f24482883b264d5461a, type: 3}
-  win: []
+  win:
+  - {fileID: 8300000, guid: 76ffbafb8d57ec64586c6a1e45b70eb5, type: 3}
 --- !u!82 &697736557
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2404,7 +2410,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6021345571961914566, guid: e8268d1333772ae42a95699290207667, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8268d1333772ae42a95699290207667, type: 3}
@@ -2417,5 +2424,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dde4d788c24e404199bfa39d2a86688c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4203491228252487519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8350745992232378154, guid: e8268d1333772ae42a95699290207667, type: 3}
+  m_PrefabInstance: {fileID: 4203491228252487517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4203491228252487520 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6637611158778015658, guid: e8268d1333772ae42a95699290207667, type: 3}
+  m_PrefabInstance: {fileID: 4203491228252487517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f9154b0e60426eb11cb4b6e7e9df83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -15,10 +15,16 @@ namespace Game
         public static GameManager Instance;
 
         [SerializeField]
+        private DeathController deathControllerUi;
+        
+        [SerializeField]
         private TextMeshProUGUI daysLeft;
 
         [SerializeField]
         private Button leaveBunkerButton;
+
+        [SerializeField]
+        private GameObject dangerPanel;
         
         [SerializeField]
         public GameObject bunkerUiPanel;
@@ -68,17 +74,19 @@ namespace Game
         private void Awake()
         {
             Instance = this;
-            _resources[ResourceType.Water] = 0;
-            _resources[ResourceType.Food] = 0;
+            _resources[ResourceType.Water] = 1;
+            _resources[ResourceType.Food] = 1;
             _resources[ResourceType.Ammo] = 0;
             leaveBunkerButton.onClick.AddListener(LeaveBunker);
             UpdateResourcesUi();
+            timer.dayNotFinished = true;
+            deathControllerUi.Hide();
         }
 
         private void Update()
         {
             nightCamera.nightDepth = timer.NightDepth;
-            leaveBunkerButton.interactable = timer.IsNight();
+            dangerPanel.SetActive(!timer.IsNight());
         }
 
         [Button]
@@ -117,6 +125,8 @@ namespace Game
             inBunker = false;
             player.transform.position = bunker.transform.position;
             bunkerUiPanel.SetActive(false);
+            timer.dayNotFinished = false;
+            CheckOnSun();
         }
 
         public void Fail(FailType failType)
@@ -138,6 +148,8 @@ namespace Game
                 default:
                     throw new ArgumentOutOfRangeException(nameof(failType), failType, null);
             }
+            
+            deathControllerUi.Show(failType);
         }
 
         public void DayStarted()

@@ -13,6 +13,8 @@ namespace Game
         public float fill;
         public int dayNumber = 0;
 
+        public bool dayNotFinished = false;
+
         private void Start()
         {
             fill = start;
@@ -31,7 +33,7 @@ namespace Game
                 NextDay();
             }
 
-            if (GameManager.Instance.inBunker && fill < 0.75f && IsNight())
+            if (dayNotFinished && IsNight())
             {
                 fill = 0.5001f;
             }
@@ -42,6 +44,7 @@ namespace Game
         {
             fill = 0;
             dayNumber++;
+            dayNotFinished = true;
             GameManager.Instance.DayStarted();
         }
 
