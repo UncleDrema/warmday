@@ -38,6 +38,9 @@ namespace Game
 
         [SerializeField]
         private AudioClip[] win;
+        
+        [SerializeField]
+        private AudioClip[] halfNight;
 
         private void PlayRandom(AudioClip[] clips)
         {
@@ -76,6 +79,9 @@ namespace Game
                     break;
                 case SoundType.Win:
                     PlayRandom(win);
+                    break;
+                case SoundType.HalfNight:
+                    PlayRandom(halfNight);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(sound), sound, null);

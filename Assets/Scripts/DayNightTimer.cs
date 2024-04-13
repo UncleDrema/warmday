@@ -22,6 +22,7 @@ namespace Game
 
         private void Update()
         {
+            var prev = fill;
             float duration;
             if (fill < 0.5)
                 duration = dayDuration;
@@ -31,6 +32,11 @@ namespace Game
             if (fill > 1)
             {
                 NextDay();
+            }
+
+            if (prev < 0.75f && fill >= 0.75f)
+            {
+                GameManager.Instance.soundPlayer.PlaySound(SoundType.HalfNight);
             }
 
             if (dayNotFinished && IsNight())

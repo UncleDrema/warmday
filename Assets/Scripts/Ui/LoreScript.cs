@@ -19,6 +19,7 @@ namespace Game.Ui
 
         private void NextPage()
         {
+            source.Stop();
             if (nextPage != null)
             {
                 nextPage.gameObject.SetActive(true);
@@ -28,6 +29,7 @@ namespace Game.Ui
                 Time.timeScale = 1;
                 transform.parent.gameObject.SetActive(false);
             }
+            
             gameObject.SetActive(false);
         }
 
@@ -35,7 +37,6 @@ namespace Game.Ui
         {
             if (clip != null)
             {
-                source.Stop();
                 source.clip = clip;
                 source.Play();
             }

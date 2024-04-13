@@ -10,6 +10,7 @@
         PlayerDeathNoSupplies,
         ZombiDeath,
         Collect,
-        Win
+        Win,
+        HalfNight
     }
 }
