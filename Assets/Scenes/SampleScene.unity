@@ -786,6 +786,17 @@ MonoBehaviour:
   nightMaterial: {fileID: 2100000, guid: bd4fa6d61311aeb4cbe9a8684e769712, type: 2}
   DayNightParams: {x: 3, y: 0.35, z: 0.9, w: 0.035}
   nightDepth: 1
+--- !u!114 &573853384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2787951543855156262, guid: e8268d1333772ae42a95699290207667, type: 3}
+  m_PrefabInstance: {fileID: 4203491228252487517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &575425327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -973,10 +984,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathControllerUi: {fileID: 4203491228252487520}
   daysLeft: {fileID: 481698016}
-  gunNotFoundText: {fileID: 4203491228252487523}
+  gunNotFoundText: {fileID: 1152731968}
   restartButtons:
   - {fileID: 4203491228252487522}
   - {fileID: 4203491228252487521}
+  - {fileID: 573853384}
   leaveBunkerButton: {fileID: 1408103365}
   dangerPanel: {fileID: 4203491228252487519}
   bunkerUiPanel: {fileID: 1282712254}
@@ -1532,6 +1544,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00efc08327d67bf4cbaa238518b63e08, type: 3}
+--- !u!1 &1152731968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 325984713629821305, guid: e8268d1333772ae42a95699290207667, type: 3}
+  m_PrefabInstance: {fileID: 4203491228252487517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1159764842 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8425201144196731098, guid: e8268d1333772ae42a95699290207667, type: 3}
@@ -3093,6 +3110,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3852785566073644158, guid: e8268d1333772ae42a95699290207667, type: 3}
+      propertyPath: m_Name
+      value: PlayAgain
+      objectReference: {fileID: 0}
     - target: {fileID: 4154556230429392702, guid: e8268d1333772ae42a95699290207667, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3244,8 +3265,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4203491228252487523 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 325984713629821305, guid: e8268d1333772ae42a95699290207667, type: 3}
-  m_PrefabInstance: {fileID: 4203491228252487517}
-  m_PrefabAsset: {fileID: 0}

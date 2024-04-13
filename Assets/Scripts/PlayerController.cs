@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Game.Pickups;
 using UnityEngine;
 using UnityEngine.Advertisements;
@@ -66,10 +67,19 @@ namespace Game
                 }
                 else
                 {
+                    GameManager.Instance.Flash();
+                    StartCoroutine(ShootAnimation());
                     Shoot(gunPosition, transform.rotation.eulerAngles.z);
                     GameManager.Instance.AddResource(ResourceType.Ammo, -1);
                 }
             }
+        }
+
+        private IEnumerator ShootAnimation()
+        {
+            fire.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+            fire.SetActive(false);
         }
 
         private void OnCollisionEnter2D(Collision2D other)

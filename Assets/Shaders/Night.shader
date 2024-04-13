@@ -4,6 +4,7 @@
         _AspectRatio ("Screen Aspect Ratio", Float) = 0
         _Flashlight ("Flashlight", Vector) = (0, 0.35, 0.4, 1)
         _LightSourcePlayer ("LightSourcePlayer", Vector) = (0, 0, 0, 0)
+        _Flash ("Flash", Float) = 0
     }
     SubShader {
         Pass {
@@ -17,6 +18,7 @@
             uniform float _AspectRatio;
             uniform float4 _LightSourcePlayer;
             uniform float4 _Flashlight;
+            uniform float _Flash;
             
             float4 frag(v2f_img i) : COLOR {
                 float2 uv = i.uv;
@@ -46,7 +48,7 @@
                 delta += smoothstep(_LightSourcePlayer.z, 0, ray) * _LightSourcePlayer.w;
 
                 delta = min(delta, 1);
-                c.rgb *= delta;
+                c.rgb *= delta + _Flash;
                 return c;
             }
             ENDCG

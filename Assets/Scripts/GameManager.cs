@@ -219,5 +219,10 @@ namespace Game
         {
             FindObjectOfType<SceneLoader>().LoadGameLevel();
         }
+
+        public void Flash()
+        {
+            nightCamera.MakeFlash();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -9,6 +10,7 @@ namespace Game
     {
         private static readonly int FlashlightKey = Shader.PropertyToID("_Flashlight");
         private static readonly int PlayerLightKey = Shader.PropertyToID("_LightSourcePlayer");
+        private static readonly int FlashKey = Shader.PropertyToID("_Flash");
         
         public Transform player;
         public Transform flashlight;
@@ -24,6 +26,8 @@ namespace Game
         [Range(0, 1)]
         public float nightDepth = 1f;
 
+        private float flashValue = 0;
+
         private void Awake()
         {
             _camera = GetComponent<Camera>();
@@ -36,10 +40,12 @@ namespace Game
         {
             nightMaterial.SetVector(FlashlightKey, savedFlashlight);
             nightMaterial.SetVector(PlayerLightKey, savedPlayer);
+            nightMaterial.SetFloat(FlashKey, 0);
         }
 
         private void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
+            nightMaterial.SetFloat(FlashKey, flashValue);
             UpdatePositionAndDayNight();
             UpdateRotation();
             Graphics.Blit(source, destination, nightMaterial);
@@ -68,6 +74,29 @@ namespace Game
         private void LateUpdate()
         {
             transform.position = player.position + offset;
+        }
+
+        public void MakeFlash()
+        {
+            StartCoroutine(FlashCoroutine(0.1f));
+        }
+
+        private IEnumerator FlashCoroutine(float duration)
+        {
+            float t = 0;
+            while (t < duration)
+            {
+                flashValue = FlashFunction(t);
+                yield return null;
+                t += Time.deltaTime;
+            }
+
+            flashValue = 0;
+        }
+
+        private float FlashFunction(float f)
+        {
+            return 1 - f;
         }
     }
 }
