@@ -79,7 +79,7 @@ namespace Game
             }
         }
 
-        private void Die(FailType failType)
+        public void Die(FailType failType)
         {
             if (!isDead)
             {

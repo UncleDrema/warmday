@@ -11,6 +11,7 @@ namespace Game
         public float nightDuration;
         public float start = 0;
         public float fill;
+        public int dayNumber = 0;
 
         private void Start()
         {
@@ -26,13 +27,22 @@ namespace Game
                 duration = nightDuration;
             fill += Time.deltaTime / duration * 0.5f;
             if (fill > 1)
-                fill = 0;
+            {
+                NextDay();
+            }
 
-            if (GameManager.Instance.inBunker && IsNight())
+            if (GameManager.Instance.inBunker && fill < 0.75f && IsNight())
             {
                 fill = 0.5001f;
             }
             fillImage.fillAmount = fill;
+        }
+
+        private void NextDay()
+        {
+            fill = 0;
+            dayNumber++;
+            GameManager.Instance.DayStarted();
         }
 
         public bool IsNight()

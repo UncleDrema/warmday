@@ -9,6 +9,7 @@
         PlayerDeathNotCollected,
         PlayerDeathNoSupplies,
         ZombiDeath,
-        Collect
+        Collect,
+        Win
     }
 }

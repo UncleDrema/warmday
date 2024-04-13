@@ -471,6 +471,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b0496478a008c408ea29e7b6a84e58, type: 3}
+--- !u!114 &481698016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3084986467431944684, guid: e8268d1333772ae42a95699290207667, type: 3}
+  m_PrefabInstance: {fileID: 4203491228252487517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &514372169 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9127694946600922391, guid: e8268d1333772ae42a95699290207667, type: 3}
@@ -716,6 +727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca74652c99e4b459252313685863d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  daysLeft: {fileID: 481698016}
   leaveBunkerButton: {fileID: 1408103365}
   bunkerUiPanel: {fileID: 1282712254}
   nightCamera: {fileID: 519420033}
@@ -734,6 +746,7 @@ MonoBehaviour:
   - {fileID: 514372169}
   - {fileID: 380795305}
   - {fileID: 992943822}
+  totalDays: 7
 --- !u!4 &697736555
 Transform:
   m_ObjectHideFlags: 0
@@ -778,6 +791,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0c61bd03bb77dbc4694dd6a10ffe225a, type: 3}
   - {fileID: 8300000, guid: 0904c9c547961f045870a3b67d769c79, type: 3}
   - {fileID: 8300000, guid: 0bcb2f65f03a9f24482883b264d5461a, type: 3}
+  win: []
 --- !u!82 &697736557
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Game.Ui;
+using TMPro;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,6 +13,9 @@ namespace Game
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
+
+        [SerializeField]
+        private TextMeshProUGUI daysLeft;
 
         [SerializeField]
         private Button leaveBunkerButton;
@@ -44,6 +49,8 @@ namespace Game
 
         public bool[] foundParts = new bool[5];
         public Image[] imageParts = new Image[5];
+
+        public int totalDays = 7;
 
         public void FindGun()
         {
@@ -130,6 +137,57 @@ namespace Game
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(failType), failType, null);
+            }
+        }
+
+        public void DayStarted()
+        {
+            var dayNumber = timer.dayNumber;
+            var left = totalDays - dayNumber;
+            daysLeft.text = left.ToString();
+
+            CheckOnSun();
+            SpendSupplies();
+            
+            if (left == 0)
+                CheckWin();
+        }
+
+        private void CheckWin()
+        {
+            if (foundParts.All(b => b))
+            {
+                Win();
+            }
+            else
+            {
+                player.Die(FailType.NotCollected);
+            }
+        }
+
+        private void Win()
+        {
+            soundPlayer.PlaySound(SoundType.Win);
+        }
+
+        private void SpendSupplies()
+        {
+            if (GetResource(ResourceType.Food) <= 0 || GetResource(ResourceType.Water) <= 0)
+            {
+                player.Die(FailType.NoSupplies);
+            }
+            else
+            {
+                AddResource(ResourceType.Food, -1);
+                AddResource(ResourceType.Water, -1);
+            }
+        }
+
+        private void CheckOnSun()
+        {
+            if (!inBunker && !timer.IsNight())
+            {
+                player.Die(FailType.Sun);
             }
         }
     }
