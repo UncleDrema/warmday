@@ -8,6 +8,7 @@ namespace Game
 {
     public class PlayerController : MonoBehaviour
     {
+        public GameObject fire;
         public GameObject noGunModel;
         public GameObject gunModel;
         public Transform gun;
