@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -133964324, guid: e89671826d6fcd745abb4b51b6ca2f84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -442,7 +442,8 @@ MonoBehaviour:
   rb: {fileID: 4066558797263271076}
   speed: 2
   rotSpeed: 90
-  collectRadius: 1
+  collectRadius: 0.5
+  shootBox: {x: 0.75, y: 8}
 --- !u!1 &7311479431079094460
 GameObject:
   m_ObjectHideFlags: 0

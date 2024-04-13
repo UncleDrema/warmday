@@ -27,11 +27,15 @@ namespace Game
             fill += Time.deltaTime / duration * 0.5f;
             if (fill > 1)
                 fill = 0;
-            
+
+            if (GameManager.Instance.inBunker && IsNight())
+            {
+                fill = 0.5001f;
+            }
             fillImage.fillAmount = fill;
         }
 
-        private bool IsNight()
+        public bool IsNight()
         {
             return fill >= 0.5;
         }

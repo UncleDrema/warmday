@@ -111,10 +111,11 @@ namespace Game
                 bool collectedOne = false;
                 for (int i = 0; i < size; i++)
                 {
-                    if (_collectResults[i].TryGetComponent<Interactable>(out var pickup))
+                    if (_collectResults[i].TryGetComponent<Interactable>(out var interactable))
                     {
-                        collectedOne = true;
-                        pickup.Interact();
+                        if (interactable is Pickup)
+                            collectedOne = true;
+                        interactable.Interact();
                     }
                 }
 
