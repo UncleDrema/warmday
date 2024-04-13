@@ -729,6 +729,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathControllerUi: {fileID: 4203491228252487520}
   daysLeft: {fileID: 481698016}
+  restartButtons:
+  - {fileID: 4203491228252487522}
+  - {fileID: 4203491228252487521}
   leaveBunkerButton: {fileID: 1408103365}
   dangerPanel: {fileID: 4203491228252487519}
   bunkerUiPanel: {fileID: 1282712254}
@@ -2440,5 +2443,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96f9154b0e60426eb11cb4b6e7e9df83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4203491228252487521 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7230446529571525863, guid: e8268d1333772ae42a95699290207667, type: 3}
+  m_PrefabInstance: {fileID: 4203491228252487517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4203491228252487522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3223695312510643686, guid: e8268d1333772ae42a95699290207667, type: 3}
+  m_PrefabInstance: {fileID: 4203491228252487517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

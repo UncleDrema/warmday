@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Game.SceneManagement;
 using Game.Ui;
 using TMPro;
 using TriInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Game
@@ -19,6 +19,9 @@ namespace Game
         
         [SerializeField]
         private TextMeshProUGUI daysLeft;
+
+        [SerializeField]
+        private List<Button> restartButtons;
 
         [SerializeField]
         private Button leaveBunkerButton;
@@ -81,6 +84,10 @@ namespace Game
             UpdateResourcesUi();
             timer.dayNotFinished = true;
             deathControllerUi.Hide();
+            foreach (var restartButton in restartButtons)
+            {
+                restartButton.onClick.AddListener(RestartGame);
+            }
         }
 
         private void Update()
@@ -201,6 +208,11 @@ namespace Game
             {
                 player.Die(FailType.Sun);
             }
+        }
+
+        public void RestartGame()
+        {
+            FindObjectOfType<SceneLoader>().LoadGameLevel();
         }
     }
 }
