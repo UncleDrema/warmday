@@ -21,6 +21,9 @@ namespace Game
         private TextMeshProUGUI daysLeft;
 
         [SerializeField]
+        private GameObject gunNotFoundText;
+
+        [SerializeField]
         private List<Button> restartButtons;
 
         [SerializeField]
@@ -66,6 +69,7 @@ namespace Game
             foundGun = true;
             gunImage.color = Color.white;
             player.SetFoundGun(foundGun);
+            gunNotFoundText.SetActive(!foundGun);
         }
 
         public void FindPart(int partIndex)
