@@ -96,6 +96,7 @@ namespace Game
 
         private void Update()
         {
+            leaveBunkerButton.interactable = timer.IsNight();
             nightCamera.nightDepth = timer.NightDepth;
             dangerPanel.SetActive(!timer.IsNight());
         }
