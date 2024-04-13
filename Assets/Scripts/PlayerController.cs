@@ -8,13 +8,16 @@ namespace Game
 {
     public class PlayerController : MonoBehaviour
     {
+        public GameObject noGunModel;
+        public GameObject gunModel;
         public Transform gun;
         public Rigidbody2D rb;
         public float speed = 1;
         public float rotSpeed = 1;
         public float collectRadius = 3;
         public Vector2 shootBox = new Vector2(0.75f, 8);
-     
+        public bool isDead = false;
+        
         private Transform myTransform;
         private readonly Collider2D[] _collectResults = new Collider2D[20];
 
@@ -23,11 +26,28 @@ namespace Game
             myTransform = transform;
         }
 
+        public void SetFoundGun(bool found)
+        {
+            gunModel.SetActive(found);
+            noGunModel.SetActive(!found);
+        }
+
         private void Update()
         {
-            MoveByWasd();
-            CollectPickups();
-            TryShoot();
+            if (CanControl())
+            {
+                MoveByWasd();
+                CollectPickups();
+                if (GameManager.Instance.foundGun)
+                {
+                    TryShoot();
+                }
+            }
+        }
+
+        public bool CanControl()
+        {
+            return !GameManager.Instance.inBunker && !isDead;
         }
 
         private void TryShoot()
@@ -48,6 +68,23 @@ namespace Game
                     Shoot(gunPosition, transform.rotation.eulerAngles.z);
                     GameManager.Instance.AddResource(ResourceType.Ammo, -1);
                 }
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.collider.GetComponent<Enemy>())
+            {
+                Die(FailType.EatenByZombi);
+            }
+        }
+
+        private void Die(FailType failType)
+        {
+            if (!isDead)
+            {
+                isDead = true;
+                GameManager.Instance.Fail(failType);
             }
         }
 

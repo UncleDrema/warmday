@@ -4,7 +4,10 @@
     {
         BadGun,
         ShootGun,
-        PlayerDeath,
+        PlayerDeathFromZombie,
+        PlayerDeathFromSun,
+        PlayerDeathNotCollected,
+        PlayerDeathNoSupplies,
         ZombiDeath,
         Collect
     }

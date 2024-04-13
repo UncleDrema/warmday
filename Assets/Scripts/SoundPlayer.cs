@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TriInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Game
@@ -18,7 +19,16 @@ namespace Game
         private AudioClip[] shootGun;
 
         [SerializeField]
-        private AudioClip[] playerDeath;
+        private AudioClip[] playerDeathZombi;
+        
+        [SerializeField]
+        private AudioClip[] playerDeathSun;
+        
+        [SerializeField]
+        private AudioClip[] playerDeathNoSupplies;
+        
+        [SerializeField]
+        private AudioClip[] playerDeathNotCollected;
         
         [SerializeField]
         private AudioClip[] zombiDeath;
@@ -43,14 +53,23 @@ namespace Game
                 case SoundType.ShootGun:
                     PlayRandom(shootGun);
                     break;
-                case SoundType.PlayerDeath:
-                    PlayRandom(playerDeath);
+                case SoundType.PlayerDeathFromZombie:
+                    PlayRandom(playerDeathZombi);
                     break;
                 case SoundType.ZombiDeath:
                     PlayRandom(zombiDeath);
                     break;
                 case SoundType.Collect:
                     PlayRandom(collect);
+                    break;
+                case SoundType.PlayerDeathFromSun:
+                    PlayRandom(playerDeathSun);
+                    break;
+                case SoundType.PlayerDeathNotCollected:
+                    PlayRandom(playerDeathNotCollected);
+                    break;
+                case SoundType.PlayerDeathNoSupplies:
+                    PlayRandom(playerDeathNoSupplies);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(sound), sound, null);

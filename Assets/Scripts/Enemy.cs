@@ -71,11 +71,12 @@ namespace Game
 
         private void CheckForPlayer()
         {
-            var player = GameManager.Instance.GetPlayerPosition();
-            if ((transform.position - player).sqrMagnitude <= playerSeeDistanceSqr)
+            var player = GameManager.Instance.GetPlayer();
+            var playerPos = player.transform.position;
+            if (player.CanControl() && (transform.position - playerPos).sqrMagnitude <= playerSeeDistanceSqr)
             {
                 _seePlayer = true;
-                target = player;
+                target = playerPos;
             }
             else
             {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Game.Ui;
 using TriInspector;
 using UnityEngine;
@@ -38,6 +39,24 @@ namespace Game
         public bool inBunker = true;
         
         private readonly Dictionary<ResourceType, int> _resources = new Dictionary<ResourceType, int>();
+        public bool foundGun = false;
+        public Image gunImage;
+
+        public bool[] foundParts = new bool[5];
+        public Image[] imageParts = new Image[5];
+
+        public void FindGun()
+        {
+            foundGun = true;
+            gunImage.color = Color.white;
+            player.SetFoundGun(foundGun);
+        }
+
+        public void FindPart(int partIndex)
+        {
+            foundParts[partIndex] = true;
+            imageParts[partIndex].color = Color.white;
+        }
 
         private void Awake()
         {
@@ -75,16 +94,15 @@ namespace Game
             }
         }
 
-        public Vector3 GetPlayerPosition()
+        public PlayerController GetPlayer()
         {
-            return player.transform.position;
+            return player;
         }
 
         public void EnterBunker()
         {
             inBunker = true;
             bunkerUiPanel.SetActive(true);
-            player.transform.position = new Vector3(0, 0, 10000);
         }
 
         public void LeaveBunker()
@@ -92,6 +110,27 @@ namespace Game
             inBunker = false;
             player.transform.position = bunker.transform.position;
             bunkerUiPanel.SetActive(false);
+        }
+
+        public void Fail(FailType failType)
+        {
+            switch (failType)
+            {
+                case FailType.EatenByZombi:
+                    soundPlayer.PlaySound(SoundType.PlayerDeathFromZombie);
+                    break;
+                case FailType.NotCollected:
+                    soundPlayer.PlaySound(SoundType.PlayerDeathNotCollected);
+                    break;
+                case FailType.Sun:
+                    soundPlayer.PlaySound(SoundType.PlayerDeathFromSun);
+                    break;
+                case FailType.NoSupplies:
+                    soundPlayer.PlaySound(SoundType.PlayerDeathNoSupplies);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(failType), failType, null);
+            }
         }
     }
 }
